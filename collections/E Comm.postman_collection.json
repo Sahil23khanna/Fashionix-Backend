@@ -1,0 +1,1545 @@
+{
+  "info": {
+    "_postman_id": "67de3e2f-f7a4-46e7-9863-8260cbb19c78",
+    "name": "E Comm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "42973139"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Authentication",
+          "item": [
+            {
+              "name": "login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "email",
+                      "value": "sahil23@gmail.com",
+                      "type": "text",
+                      "uuid": "1c0492db-b1c0-4759-82dd-bfc241761769"
+                    },
+                    {
+                      "key": "password",
+                      "value": "123",
+                      "type": "text",
+                      "uuid": "e499609e-d4c3-49bc-9786-c16a43428c0f"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/user/login",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "user",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "changePassword",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "oldPassword",
+                      "value": "1234",
+                      "type": "text",
+                      "uuid": "6ca2362d-462f-4ac6-9f6a-e49ab9e03e2b"
+                    },
+                    {
+                      "key": "newPassword",
+                      "value": "123",
+                      "type": "text",
+                      "uuid": "6c9a1d88-cc27-4c91-837d-8f52d822c7dc"
+                    },
+                    {
+                      "key": "confirmPassword",
+                      "value": "123",
+                      "type": "text",
+                      "uuid": "7cd36d85-723a-4bfc-acfd-ec5e298b35d4"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/user/changePassword",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "user",
+                    "changePassword"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Dashboard",
+          "item": [
+            {
+              "name": "dashboard",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/dashboard/dashboard",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "dashboard",
+                    "dashboard"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Brands",
+          "item": [
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "brandName",
+                      "value": "chocos",
+                      "type": "text",
+                      "uuid": "98130fee-35be-45a0-bbf4-ef3a76eacc2f"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "59242ade-d8ca-438e-b74e-2a07dccecad3",
+                      "src": "/D:/Photos/PathFinders Images/Screenshots/Screenshot 2025-05-26 232557.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/brand/add",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "brand",
+                    "add"
+                  ],
+                  "query": [
+                    {
+                      "key": "",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "type": "text",
+                      "uuid": "0b5a3c4c-c71a-4c92-ab58-bbc354ae6930"
+                    },
+                    {
+                      "key": "currentPage",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "8fb929e9-f401-4bd4-9d19-15acfcac20f9"
+                    },
+                    {
+                      "key": "brandName",
+                      "value": "Samsung",
+                      "type": "text",
+                      "uuid": "d3a95313-73c7-4823-b2e6-7f72386107ac",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/brand/all",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "brand",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694403555ea899411b0d307c",
+                      "type": "text",
+                      "uuid": "f2d5cf8e-3097-47a5-9e9b-597cea2057f1"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/brand/single",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "brand",
+                    "single"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "_id",
+                      "value": "694403555ea899411b0d307c",
+                      "type": "text"
+                    },
+                    {
+                      "key": "brandName",
+                      "value": "u",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "87f8f3d8-6d76-49d4-a2b8-cc6d2970ec92",
+                      "src": "/D:/Photos/Brand Images/Bata.jpeg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/brand/update",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "brand",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "status",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "71a06eb0-e70c-4c5b-a08d-a226093b8c26"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "694403555ea899411b0d307c",
+                      "type": "text",
+                      "uuid": "18b68008-5afe-40dc-b570-4cc7b45479a1"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/brand/changeStatus",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "brand",
+                    "changeStatus"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Category",
+          "item": [
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "categoryName",
+                      "value": "Electronics",
+                      "type": "text",
+                      "uuid": "c8c92a1f-5fd1-492a-a62e-67976af8ad4f"
+                    },
+                    {
+                      "key": "description",
+                      "value": "hello",
+                      "type": "text",
+                      "uuid": "0c3a0c2f-4aad-48d0-bf53-8d63a6e9c8f3"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "f796d2bb-1f7a-4451-8894-24bf4a63a435",
+                      "src": "/D:/Photos/PathFinders Images/Topics Images/arts.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/category/add",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "category",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "type": "text",
+                      "uuid": "913f33ed-7d20-4a90-8f31-1c2eabb1c898"
+                    },
+                    {
+                      "key": "currentPage",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "b089d518-3643-4e46-bd8b-cab734c3cb38"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/category/all",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "category",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694404135ea899411b0d308e",
+                      "type": "text",
+                      "uuid": "9db91f1b-2fa5-4e96-a07d-e42074208ec8"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/category/single",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "category",
+                    "single"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "_id",
+                      "value": "694404135ea899411b0d308e",
+                      "type": "text"
+                    },
+                    {
+                      "key": "categoryName",
+                      "value": "Bijli",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "13a0388c-25a4-4fb0-b565-e784dc71a3f8",
+                      "src": "/D:/Photos/PathFinders Images/Topics Images/computer sciense.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/category/update",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "category",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "status",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "6d894991-a406-4909-9be0-7b187062a264"
+                    },
+                    {
+                      "key": "_id",
+                      "value": "694404135ea899411b0d308e",
+                      "type": "text",
+                      "uuid": "5340530e-94df-40bb-89a3-8c0d5966db58"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/category/changeStatus",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "category",
+                    "changeStatus"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Products",
+          "item": [
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "Gray Jeans",
+                      "type": "text",
+                      "uuid": "aa206399-7791-4cd3-8281-412a6db63537"
+                    },
+                    {
+                      "key": "description",
+                      "value": "summer",
+                      "type": "text",
+                      "uuid": "2ecdf188-fcad-40f7-b600-d6d5029a6437"
+                    },
+                    {
+                      "key": "brandId",
+                      "value": "69417d7f94033b18ca535e9e",
+                      "type": "text",
+                      "uuid": "e2f36241-732b-4e29-8f17-08c934bf8431"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "6942cba5747240e8c0b60062",
+                      "type": "text",
+                      "uuid": "69f61ace-d431-471c-bb10-8b26363ed2a5"
+                    },
+                    {
+                      "key": "price",
+                      "value": "1300",
+                      "type": "text",
+                      "uuid": "a0a35fa6-2e8a-48aa-9829-bd538ee1e85f"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "93453989-26be-43b4-90f3-4133044294fa",
+                      "src": "/D:/Coding Zone/React/grocergate/public/assets/img/men bottom wear.jpg"
+                    },
+                    {
+                      "key": "gender",
+                      "value": "M",
+                      "type": "text",
+                      "uuid": "13cab17b-2008-43ff-8218-3094f07c54e5"
+                    },
+                    {
+                      "key": "size",
+                      "value": "L",
+                      "type": "text",
+                      "uuid": "5496fff0-7104-4088-a137-4744c13a2c37"
+                    },
+                    {
+                      "key": "type",
+                      "value": "Casual",
+                      "type": "text",
+                      "uuid": "e0cba7a3-5ddf-40e9-854b-38cc0601ea6b"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/product/add",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "product",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "type": "text",
+                      "uuid": "e6e49571-9347-4754-bf67-b8d16b41e5fc"
+                    },
+                    {
+                      "key": "currentPage",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "bffece0f-db25-440b-a6aa-dc1c10eccef2"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/product/all",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "product",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "6944100be5baee3e3e488aaf",
+                      "type": "text",
+                      "uuid": "8946caad-6359-4d49-a70e-07d41b1ce682"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/product/single",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "product",
+                    "single"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "description",
+                      "value": "t shirt with orange color",
+                      "type": "text",
+                      "uuid": "3da45c68-5676-4e80-a789-4dcc7e8b3980",
+                      "disabled": true
+                    },
+                    {
+                      "key": "_id",
+                      "value": "694418c22520e9e3e23fe518",
+                      "type": "text",
+                      "uuid": "5ea7b1de-f052-433b-a713-81794cf2a506"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "e0f11454-8f2d-4b03-a633-5a1777a340ab",
+                      "src": "/D:/Photos/PathFinders Images/Topics Images/commerce.jpg",
+                      "disabled": true
+                    },
+                    {
+                      "key": "price",
+                      "value": "100",
+                      "type": "text",
+                      "uuid": "d7abaf60-3592-4db5-b68f-13c1fefc442f",
+                      "disabled": true
+                    },
+                    {
+                      "key": "brandId",
+                      "value": "6942cb6d747240e8c0b6005e",
+                      "type": "text",
+                      "uuid": "7a9f9c37-3ed2-430d-966e-9f64a13806a1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "82cf6a0e-9dc4-46c6-924d-41e960a318eb",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/product/update",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "product",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694418c22520e9e3e23fe518",
+                      "type": "text",
+                      "uuid": "c8b9f9f0-7cdf-403e-be3a-d3294d680a28"
+                    },
+                    {
+                      "key": "status",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "ebd40d92-d5f5-48b3-8d5c-a042856ce63b"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/product/changeStatus",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "product",
+                    "changeStatus"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Customers",
+          "item": [
+            {
+              "name": "changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694aa05cd2609514432be873",
+                      "type": "text",
+                      "uuid": "097faed0-6a69-40ba-8f6e-4a2eba3b37f9"
+                    },
+                    {
+                      "key": "status",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "d1ad9461-5080-4197-aeb5-74bc5046864a"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/customer/changeStatus",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "customer",
+                    "changeStatus"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/customer/all",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "customer",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "userId",
+                      "value": "694aa05cd2609514432be873",
+                      "type": "text",
+                      "uuid": "0dff48fd-e468-4ff8-9e29-0511fff34765"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/customer/single",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "customer",
+                    "single"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Orders",
+          "item": [
+            {
+              "name": "updateStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694aab27a215745400aabcb6",
+                      "type": "text",
+                      "uuid": "18534668-ecb6-429e-a036-57618e479c46"
+                    },
+                    {
+                      "key": "status",
+                      "value": "Shipped",
+                      "type": "text",
+                      "uuid": "deaa6cdc-d503-42c3-b6aa-cdf160d3ce79"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/order/updateStatus",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "order",
+                    "updateStatus"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/order/all",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "order",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "single",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{adminToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694ac038510c257fc18553f0",
+                      "type": "text",
+                      "uuid": "d1c579e2-f014-4450-bed3-beedf45fad49"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}admin/order/single",
+                  "host": [
+                    "{{base_url}}admin"
+                  ],
+                  "path": [
+                    "order",
+                    "single"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Authentication",
+          "item": [
+            {
+              "name": "register",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "Meena Khanna",
+                      "type": "text",
+                      "uuid": "9dc35079-e4b6-4f19-8155-106ce13ba1f7"
+                    },
+                    {
+                      "key": "email",
+                      "value": "meenakhanna96@gmail.com",
+                      "type": "text",
+                      "uuid": "240022ab-055d-4b18-b840-26d1b1c2db94"
+                    },
+                    {
+                      "key": "password",
+                      "value": "meena",
+                      "type": "text",
+                      "uuid": "14c4be9d-2e00-4830-b896-f951aec82320"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "7837107225",
+                      "type": "text",
+                      "uuid": "2df4dd27-33d5-4bb0-b233-385cc98a2df8"
+                    },
+                    {
+                      "key": "address",
+                      "value": "Basti Sheikh, Jalandhar",
+                      "type": "text",
+                      "uuid": "f12283e5-77cd-48ae-b0d6-a599459f32bc"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/customer/register",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "customer",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "email",
+                      "value": "meenakhanna96@gmail.com",
+                      "type": "text",
+                      "uuid": "6fcefbee-0aa4-41ae-90f1-42776714217c"
+                    },
+                    {
+                      "key": "password",
+                      "value": "m",
+                      "type": "text",
+                      "uuid": "8602fea1-21b7-4b4d-ba8f-45a9e1427002"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/user/login",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "user",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "changePassword",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "oldPassword",
+                      "value": "jug",
+                      "type": "text",
+                      "uuid": "6ca2362d-462f-4ac6-9f6a-e49ab9e03e2b"
+                    },
+                    {
+                      "key": "newPassword",
+                      "value": "123",
+                      "type": "text",
+                      "uuid": "6c9a1d88-cc27-4c91-837d-8f52d822c7dc"
+                    },
+                    {
+                      "key": "confirmPassword",
+                      "value": "123",
+                      "type": "text",
+                      "uuid": "7cd36d85-723a-4bfc-acfd-ec5e298b35d4"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}api/user/changePassword",
+                  "host": [
+                    "{{base_url}}api"
+                  ],
+                  "path": [
+                    "user",
+                    "changePassword"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Update Details",
+          "item": [
+            {
+              "name": "update",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "Vikas",
+                      "type": "text",
+                      "uuid": "ac897d65-a6d6-453b-9868-3060859eb758"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "1234567890",
+                      "type": "text",
+                      "uuid": "ee584456-abff-4580-9ad8-185bb00103f4"
+                    },
+                    {
+                      "key": "address",
+                      "value": "Qaji Mandi",
+                      "type": "text",
+                      "uuid": "453a2c8a-a51b-47bf-88d6-ddc218b4995e"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/customer/update",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "customer",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Cart",
+          "item": [
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "productId",
+                      "value": "6944100be5baee3e3e488aaf",
+                      "type": "text",
+                      "uuid": "280aa7d2-8596-4e35-a6e3-fba8c0032ee7"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/cart/add",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "cart",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "all",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "productId",
+                      "value": "6944100be5baee3e3e488aaf",
+                      "type": "text",
+                      "uuid": "280aa7d2-8596-4e35-a6e3-fba8c0032ee7",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/cart/all",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "cart",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694ac00b510c257fc18553eb",
+                      "type": "text",
+                      "uuid": "b75080d8-9ee4-4a9a-b26c-ece3a67efb9a"
+                    },
+                    {
+                      "key": "quantity",
+                      "value": "10",
+                      "type": "text",
+                      "uuid": "028a3b02-8c70-481a-aef6-84776c84d71d"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/cart/update",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "cart",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteItem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694aa564f12ac840b2a31d8e",
+                      "type": "text",
+                      "uuid": "6f930c5b-89cb-4d03-8b87-de17ccef4239"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/cart/deleteItem",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "cart",
+                    "deleteItem"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Manage Order",
+          "item": [
+            {
+              "name": "add",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "shippingAddress",
+                      "value": "Basti Sheikh",
+                      "type": "text",
+                      "uuid": "ff56bbc2-7763-4cf8-a090-f1683fc1b597"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/order/add",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "order",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Cancel",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694ac038510c257fc18553f0",
+                      "type": "text",
+                      "uuid": "f9738d90-69b7-43d7-9dc3-4945976d3e73"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/order/cancel",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "order",
+                    "cancel"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "allOrders",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/order/allOrders",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "order",
+                    "allOrders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "singleOrder",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "_id",
+                      "value": "694ac038510c257fc18553f0",
+                      "type": "text",
+                      "uuid": "9a69c875-a9ee-4340-a08e-f53be88d910e"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/order/singleOrder",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "order",
+                    "singleOrder"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CustomerAllOrders",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "{{customerToken}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{base_url}}customer/orderdetails/all",
+                  "host": [
+                    "{{base_url}}customer"
+                  ],
+                  "path": [
+                    "orderdetails",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

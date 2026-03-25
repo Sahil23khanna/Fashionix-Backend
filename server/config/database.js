@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
-console.log("ENV CHECK:", process.env.MONGO_URL);
-mongoose.connect(process.env.MONGO_URL)         /* "mongodb://localhost:27017/NewCommerce" */
+
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 50000, 
+    socketTimeoutMS: 60000 
+})         
 
 .then(()=>{
   console.log("Database is Connected");

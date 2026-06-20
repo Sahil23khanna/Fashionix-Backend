@@ -1,8 +1,6 @@
 const UserModel = require("../apis/users/userModel")
 const bcryptjs = require("bcryptjs")
 
-setTimeout(() => {
-
 UserModel.findOne({email:"sahil23@gmail.com"})
 
 .then((userData)=>{
@@ -23,9 +21,9 @@ UserModel.findOne({email:"sahil23@gmail.com"})
         })
     }
     else{
-        /* console.log("Admin already exists!!"); */
+        console.log("Admin already exists!!");
          // reset admin password if admin already exists
-        userData.password = bcryptjs.hashSync("123", 10)
+       /*  userData.password = bcryptjs.hashSync("123", 10)
 
         userData.save()
         .then(() => {
@@ -33,7 +31,7 @@ UserModel.findOne({email:"sahil23@gmail.com"})
         })
         .catch((err) => {
             console.log("Error while updating admin password", err)
-        })
+        }) */
         
     }
 })
@@ -41,4 +39,3 @@ UserModel.findOne({email:"sahil23@gmail.com"})
     console.log("Error while seeding admin",err);
 })
 
-}, 5000)

@@ -21,7 +21,17 @@ UserModel.findOne({email:"sahil23@gmail.com"})
         })
     }
     else{
-        console.log("Admin already exists!!");
+        /* console.log("Admin already exists!!"); */
+         // reset admin password if admin already exists
+        userData.password = bcryptjs.hashSync("123", 10)
+
+        userData.save()
+        .then(() => {
+            console.log("Existing admin password updated")
+        })
+        .catch((err) => {
+            console.log("Error while updating admin password", err)
+        })
         
     }
 })

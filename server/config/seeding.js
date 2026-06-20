@@ -1,6 +1,8 @@
 const UserModel = require("../apis/users/userModel")
 const bcryptjs = require("bcryptjs")
 
+setTimeout(() => {
+
 UserModel.findOne({email:"sahil23@gmail.com"})
 
 .then((userData)=>{
@@ -38,3 +40,5 @@ UserModel.findOne({email:"sahil23@gmail.com"})
 .catch((err)=>{
     console.log("Error while seeding admin",err);
 })
+
+}, 5000)
